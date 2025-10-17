@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{%block title%}Admin|User{% endblock %}
+{% load pagination_tags %}
+{% load i18n %}
+{% block content %}
+<section>
+    <h1 class="h3 mb-4 fw-bold">{% trans "Add Work Log" %}</h1>
+    <div class="card mb-4">
+        <div class="card-body">
+            <!-- Action Bar: Search and Add User Button -->
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="w-100 w-md-50">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="row g-3">
+                            <div class="col-md-12">
+                                <input type="hidden" name="worklog" value="{{logid}}">
+                                <div class="mb-3">
+                                    {{ form.amount.label_tag }}
+                                    {{ form.amount }}
+                                    {% for error in form.amount.errors %}
+                                    <div class="text-danger">{{ error }}</div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-end">
+                            <a href="{% url 'website:user-view' %}" class="btn btn-secondary me-2">
+                                <i class="bi bi-arrow-counterclockwise me-1"></i> {% trans "Back" %}
+                            </a>
+                            <button type="submit" class="btn btn-success">
+                                <i class="bi bi-save-fill me-1"></i> {% trans "Save" %}
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

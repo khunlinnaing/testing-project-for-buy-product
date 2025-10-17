@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block content %}
+{% load i18n %}
+<section id="dashboard-view">
+    <h1 class="h3 mb-4 fw-bold">{% trans "Dashboard Overview" %}</h1>
+
+    <!-- Metric Cards (Responsive Grid) -->
+    <div class="row g-4 mb-5">
+
+        <!-- Card 1: Revenue -->
+        <div class="col-12 col-sm-6 col-lg-4">
+            <div class="card text-white bg-primary h-100">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-currency-dollar display-6 me-3"></i>
+                        <div>
+                            <p class="card-text text-uppercase mb-0">{% trans "Total Purchase" %}</p>
+                            <h2 class="card-title fw-bold">{{total_purchase|floatformat:2|intcomma}} {% trans "MMK" %}</h2>
+                            <p class="small mb-0">{% trans "UnPaid" %} : {{pending_issues}} | {% trans "Amount" %} : {{toal_price_pending_issues|floatformat:2|intcomma}} {% trans "MMK" %}</p>
+                            <p class="small mb-0">{% trans "Paid" %} : {{today_purchase}} | {% trans "Amount" %}  : {{toal_price_today_purchase|floatformat:2|intcomma}} {% trans "MMK" %}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <!-- Card 3: Sales -->
+        <div class="col-12 col-sm-6 col-lg-4">
+            <div class="card text-white bg-warning h-100">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-cart-fill display-6 me-3"></i>
+                        <div>
+                            <p class="card-text text-uppercase mb-0">{% trans "Total Sales" %}</p>
+                            <h2 class="card-title fw-bold">${{total_sales|floatformat:2|intcomma}} {% trans "MMK" %}</h2>
+                            <p class="small mb-0">{% trans "UnPaid" %}  : {{sale_pending_issues}} | {% trans "Amount" %} : {{toal_price_pending_issues_sale|floatformat:2|intcomma}} {% trans "MMK" %}</p>
+                            <p class="small mb-0">{% trans "Paid" %} : {{today_sales}} | {% trans "Amount" %} : {{toal_price_today_sale|floatformat:2|intcomma}} {% trans "MMK" %}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2: Users -->
+        <div class="col-12 col-sm-6 col-lg-4">
+            <div class="card text-white bg-success h-100">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-people display-6 me-3"></i>
+                        <div>
+                            <p class="card-text text-uppercase mb-0">{% trans "Users" %}</p>
+                            <h2 class="card-title fw-bold">{{users_count}}</h2>
+                            <p class="small mb-0"></p>
+                            <p class="small mb-0"></p>
+                            <p class="small mb-0"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+
+    
+</section>
+{%endblock%}

@@ -1,0 +1,72 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Login</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet"
+        xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-icons.min.css' %}">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #e0f7fa 0%, #0d6efd 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .rounded-xl {
+            border-radius: 1.5rem !important;
+        }
+        .login-card {
+            max-width: 420px;
+            padding: 30px;
+            background-color: white;
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+        }
+        .form-control.rounded-lg {
+            border-radius: 0.75rem;
+            padding: 0.75rem 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4">
+                
+                <div class="login-card rounded-xl border-0">
+
+                    <div class="text-center mb-5">
+                        <i class="bi bi-rocket-takeoff-fill text-primary display-4 mb-2"></i>
+                        <h2 class="fw-bold mb-1">{% trans "Welcome Back" %}</h2>
+                        <p class="text-muted">{% trans "Sign in to your  account" %}</p>
+                    </div>
+
+                    <form method="POST">
+                        {% csrf_token %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="alert  alert-danger alert-{{ message.tags }}">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+
+                        {{form}}
+                        <div class="d-grid my-3">
+                            <button type="submit" class="btn btn-primary btn-lg fw-bold rounded-lg shadow-sm">
+                                <i class="bi bi-box-arrow-in-right me-2"></i> {% trans "Log In" %}
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+{% block title %}Admin | Analysis{% endblock %}
+{% block content %}
+{% load i18n %}
+<section>
+    <h1 class="h3 mb-4 fw-bold">{% trans "Analysis Management" %}</h1>
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+    
+                <div class="w-100 w-md-50">           
+                    <form method="post">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                    <label for="month">Month:</label>
+                                    <select name="month" id="month" class="form-control">
+                                        {% for m in months %}
+                                        <option value="{{ m }}" {% if m == selected_month %}selected{% endif %}>{{ m }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                    <label for="year">Year:</label>
+                                    <select name="year" id="year" class="form-control">
+                                        {% for y in years %}
+                                        <option value="{{ y }}" {% if y == selected_year %}selected{% endif %}>{{ y }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                    <br>
+                                    <button class="btn btn-success form-control w-25" type="submit">{% trans "Filter" %}</button>
+                                </div>
+                            </div>
+                    </form>
+                </div> 
+            </div>
+        </div>
+    </div>
+    <div class="card mb-5">
+        <ul class="nav nav-tabs" id="analysisTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="chart-tab" data-bs-toggle="tab" data-bs-target="#purchasechart" type="button" role="tab">{% trans "Purchase Analaysis" %}</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="table-tab" data-bs-toggle="tab" data-bs-target="#salechart" type="button" role="tab">{% trans "Sale Analysis" %}</button>
+            </li>
+        </ul>
+        <div class="tab-content mt-3" id="analysisTabContent">
+            <div class="tab-pane fade show active" id="purchasechart" role="tabpanel">
+                {% include './purchase_analysis.html' %}
+            </div>
+            <div class="tab-pane fade" id="salechart" role="tabpanel">
+                {% include './sale_analysis.html' %}
+            </div>
+        </div>
+    </div>
+    <script>
+        const purchases = {{ purchases|safe }};
+        const sales = {{ sales|safe }};
+
+        const purchase_labels = purchases.map(item => item.day);
+        const purchase_dataValues = purchases.map(item => item.total_amount);
+
+        const sale_labels = sales.map(item => item.day);
+        const sale_dataValues = sales.map(item => item.total_amount);
+        
+        const sale_data = {
+            labels: purchase_labels,
+            datasets: [{
+                label: '{% trans "Daily Sale" %}',
+                data: sale_dataValues,
+                borderWidth: 1
+            }]
+        };
+
+        const purchase_data = {
+            labels: purchase_labels,
+            datasets: [{
+                label: '{% trans "Daily Purchase" %}',
+                data: purchase_dataValues,
+                borderWidth: 1
+            }]
+        };
+        const purchase_config = {
+            type: 'bar',
+            data: purchase_data,
+            options: {
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                responsive: true,
+                plugins: {
+                    legend: { position: 'top' },
+                    tooltip: { mode: 'index', intersect: false }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            autoSkip: false,
+                            maxRotation: 90,
+                            minRotation: 45,
+                            font: { size: 10 } 
+                        }
+                    },
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        };
+        const sale_config = {
+            type: 'bar',
+            data: sale_data,
+            options: {
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                responsive: true,
+                plugins: {
+                    legend: { position: 'top' },
+                    tooltip: { mode: 'index', intersect: false }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            autoSkip: false,
+                            maxRotation: 90,
+                            minRotation: 45,
+                            font: { size: 10 } 
+                        }
+                    },
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        };
+        const PurchaseChart = new Chart(
+            document.getElementById('purchase_analysis'),
+            purchase_config
+        );
+        const SaleChart = new Chart(
+            document.getElementById('sale_analysis'),
+            sale_config
+        );
+    </script>
+</section>
+{% endblock %}

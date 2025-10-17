@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{%block title%}Admin|User{% endblock %}
+{% load pagination_tags %}
+{% load i18n %}
+{% block content %}
+<section id="users-view">
+    <h1 class="h3 mb-4 fw-bold">{% trans "User Management" %}</h1>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <!-- Action Bar: Search and Add User Button -->
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="w-100 w-md-50">
+                    <form method="get" class="d-flex" role="search">
+                        <input type="search" class="form-control" name="q" value="{{ query }}" placeholder="{% trans 'Search purchases by vendor or ID...' %}">
+                        <button class="btn btn-success" type="submit">
+                            <i class="bi bi-search me-1"></i>
+                        </button>
+                    </form>
+                </div>
+                <a href="{% url 'website:user-create-view' %}" class="btn btn-primary w-100 w-md-auto" >
+                            <i class="bi bi-person-plus-fill me-2"></i> {% trans "Add New User" %}
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Users Table -->
+    <div class="card mb-5">
+        <div class="card-header bg-white fw-bold">
+            {% trans "Active Users List" %}
+        </div>
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col">{% trans "No" %}</th>
+                        <th scope="col">{% trans "Account Name" %}</th>
+                        <th scope="col">{% trans "Name" %}</th>
+                        <th scope="col">{% trans "Email" %}</th>
+                        <th scope="col">{% trans "Phone" %}</th>
+                        <th scope="col">{% trans "Role" %}</th>
+                        <th scope="col">{% trans "Status" %}</th>
+                        <th scope="col">{% trans "Actions" %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                    <tr>
+                        <td>{{ forloop.counter0|add:users.start_index }}</td>
+                        <td><a href="{% url 'website:dashboard'  user.id %}">{{user.username}}</a></td>
+                        <td>{{user.first_name}} {{user.last_name}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.profile.phone}}</td>
+                        <td>{% if user.is_superuser %}<span class="badge bg-danger text-white rounded-pill px-2 py-1">{% trans "Admin" %}</span>{% elif user.is_staff %}<span class="badge bg-warning text-white rounded-pill px-2 py-1">{% trans "Staff" %}</span>{% else %}<span class="badge bg-primary text-white rounded-pill px-2 py-1">{% trans "Worker" %}</span>{% endif %}</td>
+                        <td>{% if user.is_active %}<span class="badge bg-success rounded-pill px-2 py-1">{% trans "Active" %}</span>{% else %}<span class="badge bg-warning rounded-pill px-2 py-1">{% trans "Inactive" %}</span>{% endif %}</td>
+                        <td>
+                            <a href="{% url 'website:user-edit-view' user.id %}" class="btn btn-sm btn-outline-secondary me-1"><i
+                                    class="bi bi-pencil-fill"></i>{% trans "Edit" %}</a>
+                            <a href="{% url 'website:user-delete-view' user.id %}" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash-fill"></i>{% trans "Delete" %}</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    
+                </tbody>
+            </table>
+        </div>
+        <div class="card-footer bg-white text-end">
+            {% render_pagination users %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

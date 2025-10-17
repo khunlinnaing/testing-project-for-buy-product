@@ -1,0 +1,171 @@
+{% extends 'base.html' %}
+{% block title %}Admin | Create & Update User{% endblock %}
+{% load i18n %}
+{% block content %}
+<section>
+    <div class="container mt-4">
+        <div class="card shadow rounded-xl">
+            {{errors}}
+            <div class="card-header bg-success text-white">
+                <h5 class="card-title mb-0">
+                    <i class="bi bi-person-plus-fill me-2"></i> {{ title }}
+                </h5>
+            </div>
+            <div class="card-body">
+                <form method="post" {% if action %} action="{{ action }}" {% endif %} enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="row g-3">
+
+                        <!-- Username -->
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                {{ form.username.label_tag }}
+                                {{ form.username }}
+                                {% for error in form.username.errors %}
+                                <div class="text-danger">{{ error }}</div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <!-- First Name -->
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                {{ form.first_name.label_tag }}
+                                {{ form.first_name }}
+                                {% for error in form.first_name.errors %}
+                                <div class="text-danger">{{ error }}</div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <!-- Last Name -->
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                {{ form.last_name.label_tag }}
+                                {{ form.last_name }}
+                                {% for error in form.last_name.errors %}
+                                <div class="text-danger">{{ error }}</div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                {{ form.email.label_tag }}
+                                {{ form.email }}
+                                {% for error in form.email.errors %}
+                                <div class="text-danger">{{ error }}</div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                {{ form.phone.label_tag }}
+                                {{ form.phone }}
+                                {% for error in form.phone.errors %}
+                                <div class="text-danger">{{ error }}</div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <!-- Profile -->
+                        <div class="col-md-12">
+                            {% if form.instance.profile.profile %}
+                            <div class="mt-2">
+                                <img src="{{ form.instance.profile.profile.url }}" alt="Current Profile"
+                                    class="img-thumbnail" width="100" height="50">
+                            </div>
+                            {% endif %}
+                            <div class="mb-3">
+                                {{ form.profile.label_tag }}
+                                {{ form.profile }}
+                                {% for error in form.profile.errors %}
+                                <div class="text-danger">{{ error }}</div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <!-- Is Superuser -->
+                        <div class="col-md-6 form-check">
+                            {{ form.is_superuser }} {{ form.is_superuser.label_tag }}
+                        </div>
+
+                        <!-- Is Staff -->
+                        <div class="col-md-6 form-check">
+                            {{ form.is_staff }} {{ form.is_staff.label_tag }}
+                        </div>
+
+                        <!-- Password -->
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                {{ form.password.label_tag }}
+                                <div class="input-group">
+                                    {{ form.password }}
+                                    <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                        <i class="bi bi-eye-fill" id="passwordIcon"></i>
+                                    </button>
+                                </div>
+                                {% for error in form.password.errors %}
+                                <div class="text-danger">{{ error }}</div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <!-- Confirm Password -->
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                {{ form.confirm_password.label_tag }}
+                                <div class="input-group">
+                                    {{ form.confirm_password }}
+                                    <button class="btn btn-outline-secondary" type="button" id="toggleConfirmPassword">
+                                        <i class="bi bi-eye-fill" id="confirmIcon"></i>
+                                    </button>
+                                </div>
+                                {% for error in form.confirm_password.errors %}
+                                <div class="text-danger">{{ error }}</div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-end">
+                        <a href="{% url 'website:user-view' %}" class="btn btn-secondary me-2">
+                            <i class="bi bi-arrow-counterclockwise me-1"></i> {% trans "Back" %}
+                        </a>
+                        <button type="submit" class="btn btn-success">
+                            <i class="bi bi-save-fill me-1"></i> {% trans "Save" %}
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block script %}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        function setupPasswordToggle(fieldId, toggleBtnId, iconId) {
+            const field = document.getElementById(fieldId);
+            const toggleBtn = document.getElementById(toggleBtnId);
+            const icon = document.getElementById(iconId);
+
+            if (field && toggleBtn && icon) {
+                toggleBtn.addEventListener("click", function () {
+                    const type = field.getAttribute("type") === "password" ? "text" : "password";
+                    field.setAttribute("type", type);
+                    icon.classList.toggle("bi-eye-fill");
+                    icon.classList.toggle("bi-eye-slash-fill");
+                });
+            }
+        }
+
+        // Apply toggle for password and confirm password
+        setupPasswordToggle("id_password", "togglePassword", "passwordIcon");
+        setupPasswordToggle("id_confirm_password", "toggleConfirmPassword", "confirmIcon");
+    });
+</script>
+{% endblock %}

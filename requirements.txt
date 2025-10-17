@@ -1,0 +1,8 @@
+django
+djangorestframework
+django-cors-headers
+Pillow
+#swagger
+drf-yasg
+openpyxl
+dj-database-url

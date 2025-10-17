@@ -1,0 +1,648 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# django-admin compilemessages
+# django-admin makemessages -l my
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-18 01:49+0630\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: my\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: project/forms/purchase_form.py:10 project/forms/sale_form.py:10
+#: project/templates/purchase/index.html:37
+#: project/templates/report/daily/purchase_report.html:15
+#: project/templates/report/daily/sale_report.html:15
+#: project/templates/report/monthly/purchase_report.html:21
+#: project/templates/report/monthly/sale_report.html:20
+#: project/templates/sale/index.html:37 project/templates/user/index.html:39
+msgid "Name"
+msgstr "နာမည်"
+
+#: project/forms/purchase_form.py:10 project/forms/sale_form.py:10
+#: project/forms/work_log_form.py:21 project/templates/dashboard/index.html:20
+#: project/templates/dashboard/index.html:21
+#: project/templates/dashboard/index.html:39
+#: project/templates/dashboard/index.html:40
+#: project/templates/purchase/index.html:39
+#: project/templates/report/daily/purchase_report.html:17
+#: project/templates/report/daily/sale_report.html:17
+#: project/templates/report/monthly/purchase_report.html:23
+#: project/templates/report/monthly/sale_report.html:22
+#: project/templates/sale/index.html:39
+msgid "Amount"
+msgstr "ပမာဏ"
+
+#: project/forms/purchase_form.py:10 project/forms/sale_form.py:10
+#: project/templates/purchase/index.html:40
+#: project/templates/report/daily/purchase_report.html:18
+#: project/templates/report/daily/sale_report.html:18
+#: project/templates/report/monthly/purchase_report.html:24
+#: project/templates/report/monthly/sale_report.html:23
+#: project/templates/sale/index.html:40
+msgid "Price"
+msgstr "စျေးနှုန်း"
+
+#: project/forms/purchase_form.py:10 project/forms/sale_form.py:10
+#: project/templates/purchase/index.html:41
+#: project/templates/report/daily/purchase_report.html:6
+#: project/templates/report/daily/purchase_report.html:19
+#: project/templates/report/daily/sale_report.html:6
+#: project/templates/report/daily/sale_report.html:19
+#: project/templates/report/monthly/purchase_report.html:6
+#: project/templates/report/monthly/purchase_report.html:25
+#: project/templates/report/monthly/sale_report.html:6
+#: project/templates/report/monthly/sale_report.html:24
+#: project/templates/sale/index.html:41
+msgid "Total Price"
+msgstr "စုစုပေါင်းစျေးနှုန်း"
+
+#: project/forms/purchase_form.py:10 project/forms/sale_form.py:10
+#, fuzzy
+#| msgid "Status"
+msgid "Pay Status"
+msgstr "အခြေအနေ"
+
+#: project/forms/purchase_form.py:10 project/forms/sale_form.py:10
+#: project/templates/purchase/index.html:38
+#: project/templates/report/daily/purchase_report.html:16
+#: project/templates/report/daily/sale_report.html:16
+#: project/templates/report/monthly/purchase_report.html:22
+#: project/templates/report/monthly/sale_report.html:21
+#: project/templates/sale/index.html:38
+msgid "Type"
+msgstr "အမျိုးအစား"
+
+#: project/forms/purchase_form.py:12 project/forms/sale_form.py:13
+msgid "Vendor/Supplier Name"
+msgstr "ရောင်းချသူ/၀ယ်ယူသူအမည်"
+
+#: project/forms/purchase_form.py:16 project/forms/sale_form.py:17
+#: project/templates/dashboard/index.html:21
+#: project/templates/dashboard/index.html:40
+#: project/templates/user/dashboard.html:59
+msgid "Paid"
+msgstr "ပေးချေပြီးပါပြီ"
+
+#: project/forms/purchase_form.py:16 project/forms/sale_form.py:17
+msgid "Unpaid"
+msgstr "မပေးချေရသေးပါ"
+
+#: project/forms/purchase_form.py:27 project/forms/sale_form.py:28
+msgid "Amount must be at least 1."
+msgstr "ပမာဏသည် အနည်းဆုံး 1 ဖြစ်ရပါမည်။"
+
+#: project/forms/purchase_form.py:33 project/forms/sale_form.py:34
+msgid "Price must be at least 1."
+msgstr "စျေးနှုန်းသည် အနည်းဆုံး 1 ဖြစ်ရပါမည်။"
+
+#: project/forms/purchase_form.py:39 project/forms/sale_form.py:40
+msgid "Total price must be at least 1."
+msgstr "စုစုပေါင်းစျေးနှုန်းသည် အနည်းဆုံး 1 ဖြစ်ရပါမည်။"
+
+#: project/forms/sale_form.py:10 project/forms/sale_form.py:12
+msgid "Company Name"
+msgstr "ကုမ္ပဏီအမည်"
+
+#: project/forms/user_form.py:12 project/templates/user/index.html:41
+msgid "Phone"
+msgstr "ဖုန်း"
+
+#: project/forms/user_form.py:13
+msgid "Enter Phone number"
+msgstr "ဖုန်းနံပါတ်ထည့်ပါ။"
+
+#: project/forms/user_form.py:16
+msgid "Profile"
+msgstr "ပရိုဖိုင်လ်"
+
+#: project/forms/user_form.py:21
+msgid "Password"
+msgstr "စကားဝှက်"
+
+#: project/forms/user_form.py:23
+msgid "Enter password"
+msgstr "စကားဝှက်ထည့်ပါ။"
+
+#: project/forms/user_form.py:26
+msgid "Confirm Password"
+msgstr "စကားဝှက်အတည်ပြုခြင်း"
+
+#: project/forms/user_form.py:28
+msgid "Enter Confirm password"
+msgstr "အတည်ပြု စကားဝှက်ကိုရိုက်ထည့်ပါ။"
+
+#: project/forms/user_form.py:35 project/forms/user_form.py:43
+msgid "Username"
+msgstr "အကောင့်အမည်"
+
+#: project/forms/user_form.py:36 project/forms/user_form.py:44
+msgid "First name"
+msgstr "နာမည်"
+
+#: project/forms/user_form.py:37 project/forms/user_form.py:45
+msgid "Last name"
+msgstr "မျိုးနွယ်အမည်"
+
+#: project/forms/user_form.py:38 project/forms/user_form.py:46
+msgid "Email address"
+msgstr ""
+
+#: project/forms/user_form.py:39 project/templates/user/index.html:55
+msgid "Staff"
+msgstr "ဝန်ထမ်း"
+
+#: project/forms/user_form.py:40
+msgid "Superuser"
+msgstr "အဆင့်မြင့်အသုံးပြုသူ"
+
+#: project/forms/user_form.py:52
+msgid "This field is required."
+msgstr "ဤကွက်ကို ဖြည့်ရမည်။"
+
+#: project/forms/user_form.py:53
+msgid "Invalid value."
+msgstr "တန်ဖိုးမမှန်ကန်ပါ။"
+
+#: project/forms/user_form.py:54
+#, fuzzy, python-format
+#| msgid ""
+#| "Ensure this value has at most %(limit_value)d characters (it has "
+#| "%(show_value)d)."
+msgid ""
+"Ensure this value has at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr "အလျားအများဆုံးကို ဖြတ်ကျော်နေပါသည်။"
+
+#: project/forms/user_form.py:55
+#, fuzzy, python-format
+#| msgid ""
+#| "Ensure this value has at least %(limit_value)d characters (it has "
+#| "%(show_value)d)."
+msgid ""
+"Ensure this value has at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr "အနည်းဆုံးအရှည်ကို မဖြည့်သေးပါ။"
+
+#: project/forms/user_form.py:56
+msgid "Select a valid choice. That choice is not one of the available choices."
+msgstr "ရွေးချယ်မှုမမှန်ပါ။"
+
+#: project/forms/user_form.py:57
+msgid "This value already exists."
+msgstr "ဤတန်ဖိုးကို အသုံးပြုပြီးသားဖြစ်သည်။"
+
+#: project/forms/user_form.py:73
+msgid "This email is already registered!"
+msgstr "ဤအီးမေးလ်မှာမှတ်ပုံတင်နှင့်ပြီးသားဖြစ်သည်!"
+
+#: project/forms/user_form.py:79
+msgid "Phone number must contain digits only."
+msgstr "ဖုန်းနံပါတ်တွင် ဂဏန်းများသာ ပါဝင်ရပါမည်။"
+
+#: project/forms/user_form.py:88
+msgid "Passwords do not match!"
+msgstr "စကားဝှက်များ မတိုက်ဆိုင်ပါ။"
+
+#: project/models.py:8 project/templates/purchase/index.html:54
+#: project/templates/report/daily/purchase_report.html:31
+#: project/templates/report/daily/sale_report.html:32
+#: project/templates/report/monthly/purchase_report.html:37
+#: project/templates/report/monthly/sale_report.html:36
+msgid "Tea Wet"
+msgstr "လက်ဖက် အစို"
+
+#: project/models.py:9 project/templates/purchase/index.html:56
+#: project/templates/report/daily/purchase_report.html:33
+#: project/templates/report/daily/sale_report.html:34
+#: project/templates/report/monthly/purchase_report.html:39
+#: project/templates/report/monthly/sale_report.html:38
+msgid "Tea Dry"
+msgstr "လက်ဖက်ခြောက်"
+
+#: project/models.py:10 project/templates/purchase/index.html:58
+#: project/templates/report/monthly/purchase_report.html:41
+#: project/templates/report/monthly/sale_report.html:40
+msgid "Tea Leaves"
+msgstr "လက်ဖက်ညွှန့်"
+
+#: project/models.py:13
+msgid "Fixed Daily Worker"
+msgstr "ပုံသေနေ့စဉ်အလုပ်သမား"
+
+#: project/models.py:14
+msgid "Casual Worker"
+msgstr "ကျပန်းအလုပ်သမား"
+
+#: project/templates/analysis/index.html:6
+msgid "Analysis Management"
+msgstr "ခွဲခြမ်းစိတ်ဖြာခြင်း စီမံခန့်ခွဲမှု"
+
+#: project/templates/analysis/index.html:33
+#: project/templates/report/monthly/index.html:31
+#: project/templates/user/dashboard.html:32
+msgid "Filter"
+msgstr "ဇကာစစ်ချမည်။"
+
+#: project/templates/analysis/index.html:44
+#: project/templates/report/daily/index.html:21
+#: project/templates/report/monthly/index.html:42
+msgid "Purchase Analaysis"
+msgstr "ဝယ်ယူမှု ခွဲခြမ်းစိတ်ဖြာခြင်း။"
+
+#: project/templates/analysis/index.html:47
+#: project/templates/report/daily/index.html:25
+#: project/templates/report/monthly/index.html:46
+msgid "Sale Analysis"
+msgstr "ရောင်းချခြင်း စိစစ်ခြင်း။"
+
+#: project/templates/analysis/index.html:72
+msgid "Daily Sale"
+msgstr "နေ့စဉ်ရောင်း"
+
+#: project/templates/analysis/index.html:81
+msgid "Daily Purchase"
+msgstr "နေ့စဉ်ဝယ်ယူမှု"
+
+#: project/templates/auth/login.html:46
+msgid "Welcome Back"
+msgstr "ကြိုဆိုပါတယ်"
+
+#: project/templates/auth/login.html:47
+msgid "Sign in to your  account"
+msgstr "သင့်အကောင့်သို့ ဝင်ရောက်ပါ။"
+
+#: project/templates/auth/login.html:63
+msgid "Log In"
+msgstr "လော့ဂ်အင်"
+
+#: project/templates/base.html:38 project/templates/base.html:91
+msgid "Dashboard"
+msgstr "ဒိုင်ခွက်"
+
+#: project/templates/base.html:42 project/templates/base.html:95
+#: project/templates/dashboard/index.html:54
+msgid "Users"
+msgstr "အသုံးပြုသုံးဦးရေ"
+
+#: project/templates/base.html:46 project/templates/base.html:99
+msgid "Sales"
+msgstr "အရောင်း"
+
+#: project/templates/base.html:51 project/templates/base.html:104
+msgid "Purchases"
+msgstr "ဝယ်ယူမှုများ"
+
+#: project/templates/base.html:56 project/templates/base.html:109
+msgid "Report"
+msgstr "အစီရင်ခံစာ"
+
+#: project/templates/base.html:60 project/templates/base.html:113
+msgid "Daily Report"
+msgstr "နေ့စဉ်အစီရင်ခံစာ"
+
+#: project/templates/base.html:63 project/templates/base.html:116
+msgid "Monthly Report"
+msgstr "လစဉ်အစီရင်ခံစာ"
+
+#: project/templates/base.html:70 project/templates/base.html:123
+msgid "Alanysis"
+msgstr "ခွဲခြမ်းစိတ်ဖြာခြင်း။"
+
+#: project/templates/base.html:130 project/templates/basefiles/nav_bar.html:41
+msgid "Logout"
+msgstr "ထွက်ပါ။"
+
+#: project/templates/basefiles/nav_bar.html:12
+msgid "Admin Panel"
+msgstr "စီမံခန့်ခွဲရေးအဖွဲ့"
+
+#: project/templates/basefiles/nav_bar.html:39
+msgid "Settings"
+msgstr "ဆက်တင်များ"
+
+#: project/templates/dashboard/index.html:6
+msgid "Dashboard Overview"
+msgstr "ဒက်ရှ်ဘုတ် ခြုံငုံသုံးသပ်ချက်"
+
+#: project/templates/dashboard/index.html:18
+msgid "Total Purchase"
+msgstr "စုစုပေါင်းဝယ်ယူမှု"
+
+#: project/templates/dashboard/index.html:19
+#: project/templates/dashboard/index.html:20
+#: project/templates/dashboard/index.html:21
+#: project/templates/dashboard/index.html:38
+#: project/templates/dashboard/index.html:39
+#: project/templates/dashboard/index.html:40
+#: project/templates/purchase/index.html:62
+#: project/templates/purchase/index.html:63
+#: project/templates/report/daily/purchase_report.html:6
+#: project/templates/report/daily/purchase_report.html:39
+#: project/templates/report/daily/purchase_report.html:40
+#: project/templates/report/daily/sale_report.html:6
+#: project/templates/report/daily/sale_report.html:40
+#: project/templates/report/daily/sale_report.html:41
+#: project/templates/report/monthly/purchase_report.html:6
+#: project/templates/report/monthly/purchase_report.html:45
+#: project/templates/report/monthly/purchase_report.html:46
+#: project/templates/report/monthly/sale_report.html:6
+#: project/templates/report/monthly/sale_report.html:44
+#: project/templates/report/monthly/sale_report.html:45
+#: project/templates/user/dashboard.html:41
+msgid "MMK"
+msgstr "ကျပ်"
+
+#: project/templates/dashboard/index.html:20
+#: project/templates/dashboard/index.html:39
+msgid "UnPaid"
+msgstr "မပေးချေရသေးပါ"
+
+#: project/templates/dashboard/index.html:37
+msgid "Total Sales"
+msgstr "စုစုပေါင်း၀ယ်အား"
+
+#: project/templates/purchase/index.html:8
+msgid "Purchases Management"
+msgstr "ဝယ်ယူမှုစီမံခန့်ခွဲမှု"
+
+#: project/templates/purchase/index.html:22
+msgid "Add New Purchase"
+msgstr "ဝယ်ယူမှုအသစ်ထည့်ပါ။"
+
+#: project/templates/purchase/index.html:30
+msgid "Recent Purchase Orders"
+msgstr "လတ်တလော ဝယ်ယူမှု အမှာစာများ"
+
+#: project/templates/purchase/index.html:36
+#: project/templates/report/daily/purchase_report.html:14
+#: project/templates/report/monthly/purchase_report.html:20
+msgid "Purchase NO"
+msgstr "ဝယ်ယူမှုအမှတ်"
+
+#: project/templates/purchase/index.html:42
+#: project/templates/report/daily/purchase_report.html:20
+#: project/templates/report/daily/sale_report.html:20
+#: project/templates/report/monthly/purchase_report.html:26
+#: project/templates/report/monthly/sale_report.html:25
+#: project/templates/sale/index.html:42
+#: project/templates/user/dashboard.html:47
+msgid "Date"
+msgstr "ရက်စွဲ"
+
+#: project/templates/purchase/index.html:43
+#: project/templates/report/daily/purchase_report.html:21
+#: project/templates/report/daily/sale_report.html:21
+#: project/templates/report/monthly/purchase_report.html:27
+#: project/templates/report/monthly/sale_report.html:26
+#: project/templates/sale/index.html:43 project/templates/user/index.html:43
+msgid "Status"
+msgstr "အခြေအနေ"
+
+#: project/templates/purchase/index.html:44
+#: project/templates/report/daily/sale_report.html:22
+#: project/templates/sale/index.html:44 project/templates/user/index.html:44
+msgid "Actions"
+msgstr "လုပ်ဆောင်ချက်များ"
+
+#: project/templates/purchase/index.html:61
+#: project/templates/report/daily/purchase_report.html:38
+#: project/templates/report/daily/sale_report.html:39
+#: project/templates/report/monthly/purchase_report.html:44
+#: project/templates/report/monthly/sale_report.html:43
+#, fuzzy
+msgid "Kg"
+msgstr "ကီလို"
+
+#: project/templates/purchase/index.html:66
+#: project/templates/report/daily/purchase_report.html:42
+#: project/templates/report/daily/sale_report.html:43
+#: project/templates/report/monthly/purchase_report.html:48
+#: project/templates/report/monthly/sale_report.html:47
+#: project/templates/sale/index.html:66
+msgid "Completed"
+msgstr "ပြီးသွားပြီ"
+
+#: project/templates/purchase/index.html:67
+#: project/templates/report/daily/purchase_report.html:43
+#: project/templates/report/daily/sale_report.html:44
+#: project/templates/report/monthly/purchase_report.html:49
+#: project/templates/report/monthly/sale_report.html:48
+#: project/templates/sale/index.html:67
+msgid "Pending"
+msgstr "ဆိုင်းငံ့ထားသည်။"
+
+#: project/templates/purchase/index.html:71
+#: project/templates/sale/index.html:71 project/templates/user/index.html:59
+msgid "Edit"
+msgstr "တည်းဖြတ်ပါ။"
+
+#: project/templates/purchase/index.html:74
+#: project/templates/sale/index.html:74 project/templates/user/index.html:60
+msgid "Delete"
+msgstr "ဖျက်ပါ။"
+
+#: project/templates/purchase/purchase.html:84
+#: project/templates/sale/sale.html:93 project/templates/user/dashboard.html:76
+#: project/templates/user/user.html:135
+#: project/templates/user/worklog_form.html:29
+msgid "Back"
+msgstr "နောက်သို့ပြန်သွားမည်"
+
+#: project/templates/purchase/purchase.html:87
+msgid "Save Purchase"
+msgstr "ဝယ်ယူမှုကို သိမ်းဆည်းပါ။"
+
+#: project/templates/report/daily/index.html:6
+msgid "Daily Report Management"
+msgstr "နေ့စဉ်အစီရင်ခံစာစီမံခန့်ခွဲမှု"
+
+#: project/templates/report/daily/purchase_report.html:8
+#: project/templates/report/daily/sale_report.html:8
+#: project/templates/report/monthly/purchase_report.html:12
+#: project/templates/report/monthly/sale_report.html:12
+msgid "Download Excel"
+msgstr "Excel ကိုဒေါင်းလုဒ်လုပ်ပါ။"
+
+#: project/templates/report/daily/purchase_report.html:35
+#: project/templates/report/daily/sale_report.html:36
+#, fuzzy
+#| msgid "Tea Leaves"
+msgid "Tea leaves"
+msgstr "လက်ဖက်ညွှန့်"
+
+#: project/templates/report/daily/sale_report.html:14
+#: project/templates/report/monthly/sale_report.html:19
+#: project/templates/sale/index.html:36
+msgid "Sale NO"
+msgstr "ရောင်းရန် နံပါတ်"
+
+#: project/templates/report/daily/sale_report.html:55
+#: project/templates/report/monthly/purchase_report.html:60
+msgid "No data"
+msgstr "ဒေတာမရှိပါ။"
+
+#: project/templates/report/monthly/index.html:6
+msgid "Monthly Report Management"
+msgstr "လစဉ်အစီရင်ခံစာစီမံခန့်ခွဲမှု"
+
+#: project/templates/report/monthly/index.html:14
+#: project/templates/user/dashboard.html:15
+msgid "Month"
+msgstr "လ"
+
+#: project/templates/report/monthly/index.html:22
+#: project/templates/user/dashboard.html:23
+msgid "Year"
+msgstr "နှစ်"
+
+#: project/templates/sale/index.html:8
+msgid "Sale Management"
+msgstr "အရောင်းစီမံခန့်ခွဲမှု"
+
+#: project/templates/sale/index.html:22
+msgid "Add New Sale"
+msgstr "ရောင်းရန်အသစ်ထည့်ပါ။"
+
+#: project/templates/sale/index.html:30
+msgid "Recent Sale Orders"
+msgstr "မကြာသေးမီက အရောင်းအမှာစာများ"
+
+#: project/templates/sale/sale.html:96
+msgid "Save Sale"
+msgstr "အ၀ယ် သိမ်းဆည်းပါ။"
+
+#: project/templates/user/dashboard.html:7
+msgid "User Salary Dashboard"
+msgstr "အသုံးပြုသူလစာဒိုင်ခွက်"
+
+#: project/templates/user/dashboard.html:41
+msgid "Total Salary"
+msgstr "စုစုပေါင်းလစာ"
+
+#: project/templates/user/dashboard.html:48
+#: project/templates/user/dashboard.html:57
+msgid "Leave"
+msgstr "ခွင့်"
+
+#: project/templates/user/dashboard.html:49
+msgid "Salary"
+msgstr "လစာ"
+
+#: project/templates/user/dashboard.html:50
+msgid "Pay state"
+msgstr "ငွေပေးချေမှုအခြေအနေ"
+
+#: project/templates/user/dashboard.html:57
+msgid "Attented"
+msgstr "တက်ရောက်သည်"
+
+#: project/templates/user/dashboard.html:59
+msgid "Payment"
+msgstr "ငွေပေးချေမှု"
+
+#: project/templates/user/dashboard.html:63
+msgid "No work logs yet."
+msgstr "အလုပ်မှတ်တမ်းမရသေးပါ။"
+
+#: project/templates/user/index.html:7
+msgid "User Management"
+msgstr "အသုံးပြုသူစီမံခန့်ခွဲမှု"
+
+#: project/templates/user/index.html:15
+msgid "Search purchases by vendor or ID..."
+msgstr "ရောင်းချသူ သို့မဟုတ် ID ဖြင့် ဝယ်ယူမှုများကို ရှာဖွေပါ..."
+
+#: project/templates/user/index.html:22 project/web_views.py:76
+msgid "Add New User"
+msgstr "အသုံးပြုသူအသစ်ထည့်ပါ။"
+
+#: project/templates/user/index.html:31
+msgid "Active Users List"
+msgstr "လက်ရှိအသုံးပြုသူများစာရင်း"
+
+#: project/templates/user/index.html:37
+msgid "No"
+msgstr "အမှတ်စဥ်"
+
+#: project/templates/user/index.html:38
+msgid "Account Name"
+msgstr "အကောင့်အမည်"
+
+#: project/templates/user/index.html:40
+msgid "Email"
+msgstr "အီးမေးလ်"
+
+#: project/templates/user/index.html:42
+msgid "Role"
+msgstr "အခန်းကဏ္ဍ"
+
+#: project/templates/user/index.html:55
+msgid "Admin"
+msgstr "အက်မင်"
+
+#: project/templates/user/index.html:55
+msgid "Worker"
+msgstr "အလုပ်သမား"
+
+#: project/templates/user/index.html:56
+msgid "Active"
+msgstr "အသက်ဝင်သည်။"
+
+#: project/templates/user/index.html:56
+msgid "Inactive"
+msgstr "မလှုပ်မရှား"
+
+#: project/templates/user/user.html:138
+#: project/templates/user/worklog_form.html:32
+msgid "Save"
+msgstr "သိမ်းဆည်းပါ။"
+
+#: project/templates/user/worklog_form.html:7
+msgid "Add Work Log"
+msgstr "အလုပ်မှတ်တမ်းထည့်ပါ။"
+
+#: project/web_views.py:92
+msgid "Update user information"
+msgstr "အသုံးပြုသူအချက်အလက်ကို ပြန်ပြီးပြင်ဆင်ပါမည်။"
+
+#: project/web_views.py:176
+msgid "Add New Purchase Record"
+msgstr "ဝယ်ယူမှုမှတ်တမ်းအသစ်ကို ထည့်ပါ။"
+
+#: project/web_views.py:188
+msgid "Update Purchase Record"
+msgstr "ဝယ်ယူမှုမှတ်တမ်းကို ပြင်ဆင်ပါမည်။"
+
+#: project/web_views.py:234
+msgid "Add New Sale Record"
+msgstr "အရောင်းမှတ်တမ်းအသစ်ထည့်ပါ။"
+
+#: project/web_views.py:246
+msgid "Update Sale Record"
+msgstr "အရောင်းမှတ်တမ်းကို ပြင်ဆင်ပါမည်။"
+
+#~ msgid "English"
+#~ msgstr "အင်္ဂလိပ်စာ"
+
+#~ msgid "Myanmar"
+#~ msgstr "မြန်မာ"
+
+# msgid "English"
+# msgstr "အင်္ဂလိပ်"
+# django-admin compilemessages -l my
+# msgid "Burmese"
+# msgstr "မြန်မာ"
+#~ msgid "Change Language"
+#~ msgstr "ဘာသာပြန်ပါ"

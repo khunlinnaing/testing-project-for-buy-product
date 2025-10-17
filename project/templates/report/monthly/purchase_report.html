@@ -1,0 +1,62 @@
+{% load humanize %}
+{% load i18n %}
+{% load pagination_tags %}
+{% if purchases %}
+<div class="card-header bg-white fw-bold">
+    <p class="text-danger my-3">{% trans "Total Price" %}: {{purchase_total_price|floatformat:2|intcomma}} {% trans "MMK" %}</p>
+    <form action="{% url 'website:download-purchase-monthly-csv' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="month" value="{{selected_month}}">
+        <input type="hidden" name="year" value="{{selected_year}}">
+        <button type="submit" class="btn btn-success">
+    {% trans "Download Excel" %}</button>
+    </form>
+    
+</div>
+<div class="table-responsive" tabindex="0">
+    <table class="table table-hover align-middle mb-0">
+        <thead>
+            <tr class="table-light">
+                <th scope="col">{% trans "Purchase NO" %}</th>
+                <th scope="col">{% trans "Name" %}</th>
+                <th scope="col">{% trans "Type" %}</th>
+                <th scope="col" style="text-align: right;">{% trans "Amount" %}</th>
+                <th scope="col" style="text-align: right;">{% trans "Price" %}</th>
+                <th scope="col" style="text-align: right;">{% trans "Total Price" %}</th>
+                <th scope="col">{% trans "Date" %}</th>
+                <th scope="col">{% trans "Status" %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in purchases %}
+            <tr>
+                <td>{{data.purchase_no}}</td>
+                <td>{{data.name}}</td>
+                <td>
+                    {% if data.type == 1 %}
+                    {% trans "Tea Wet" %}
+                    {% elif data.type == 2 %}
+                    {% trans "Tea Dry" %}
+                    {% else %}
+                    {% trans "Tea Leaves" %}
+                    {% endif %}
+                </td>
+                <td style="text-align: right;">{{data.amount|floatformat:2|intcomma}} {% trans "Kg" %}</td>
+                <td style="text-align: right;">{{data.price|floatformat:2|intcomma}} {% trans "MMK" %}</td>
+                <td style="text-align: right;">{{data.total_price|floatformat:2|intcomma}} {% trans "MMK" %}</td>
+                <td>{{data.create_date|date:"d-m-Y"}}</td>
+                <td>{% if data.pay_status %}<span class="badge bg-success rounded-pill px-2 py-1">{% trans "Completed" %}</span>
+                    {% else %}<span class="badge bg-danger rounded-pill px-2 py-1">{% trans "Pending" %}</span>{% endif %}</td>
+               
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div class="card-footer bg-white text-end">
+    {% render_pagination purchases %}
+</div>
+{% else %}
+<center class="my-4">{% trans "No data" %}</center>
+{% endif %}
+

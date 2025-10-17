@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}Admin | Analysis{% endblock %}
+{% block content %}
+<section>
+    <h1 class="h3 mb-4 fw-bold">{% trans "Daily Report Management" %}</h1>
+    <div class="card mb-4">
+        <div class="card-body">
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="date" name="date" class="form-control" value="{{ today|date:'Y-m-d' }}" onchange="this.form.submit()">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="card mb-5">
+        <ul class="nav nav-tabs" id="analysisTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="chart-tab" data-bs-toggle="tab" data-bs-target="#purchasereport"
+                    type="button" role="tab">{% trans "Purchase Analaysis" %}</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="table-tab" data-bs-toggle="tab" data-bs-target="#salereport" type="button"
+                    role="tab">{% trans "Sale Analysis" %}</button>
+            </li>
+        </ul>
+        <div class="tab-content mt-3" id="analysisTabContent">
+            <div class="tab-pane fade show active" id="purchasereport" role="tabpanel">
+                {% include './purchase_report.html' %}
+            </div>
+            <div class="tab-pane fade" id="salereport" role="tabpanel">
+                {% include './sale_report.html' %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

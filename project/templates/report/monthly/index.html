@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}Admin | Analysis{% endblock %}
+{% block content %}
+<section>
+    <h1 class="h3 mb-4 fw-bold">{% trans "Monthly Report Management" %}</h1>
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="w-100 w-md-50">           
+                        <form method="post">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                    <label for="month">{% trans "Month" %}:</label>
+                                    <select name="month" id="month" class="form-control">
+                                        {% for m in months %}
+                                        <option value="{{ m }}" {% if m == selected_month %}selected{% endif %}>{{ m }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                    <label for="year">{% trans "Year" %}:</label>
+                                    <select name="year" id="year" class="form-control">
+                                        {% for y in years %}
+                                        <option value="{{ y }}" {% if y == selected_year %}selected{% endif %}>{{ y }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                    <br>
+                                    <button class="btn btn-success form-control w-25" type="submit">{% trans "Filter" %}</button>
+                                </div>
+                            </div>
+                    </form>
+                </div> 
+        </div>
+    </div>
+    <div class="card mb-5">
+        <ul class="nav nav-tabs" id="analysisTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="chart-tab" data-bs-toggle="tab" data-bs-target="#purchasereport"
+                    type="button" role="tab">{% trans "Purchase Analaysis" %}</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="table-tab" data-bs-toggle="tab" data-bs-target="#salereport" type="button"
+                    role="tab">{% trans "Sale Analysis" %}</button>
+            </li>
+        </ul>
+        <div class="tab-content mt-3" id="analysisTabContent">
+            <div class="tab-pane fade show active" id="purchasereport" role="tabpanel">
+                {% include './purchase_report.html' %}
+            </div>
+            <div class="tab-pane fade" id="salereport" role="tabpanel">
+                {% include './sale_report.html' %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

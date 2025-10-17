@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% block title %}Admin | Create && Update{% endblock %}
+{% load humanize %}
+{% load i18n %}
+{% block content %}
+<section id="purchases-view">
+    <div class="container mt-4">
+        <div class="card shadow rounded-xl">
+            <div class="card-header bg-success text-white">
+                <h5 class="card-title mb-0">
+                    <i class="bi bi-receipt me-2"></i> {{title}}
+                </h5>
+            </div>
+            <div class="card-body">
+                <form method="post" {%if action %}action="{{action}}"{% endif %}>
+                    {% csrf_token %}
+                    <div class="row g-3">
+
+                        <!-- Vendor/Supplier Name -->
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                {{ form.name.label_tag }}
+                                {{ form.name }}
+                                {% for error in form.name.errors %}
+                                    <div class="text-danger">{{ error }}</div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <!-- Amount -->
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                {{ form.amount.label_tag }}
+                                {{ form.amount }}
+                                {% for error in form.amount.errors %}
+                                    <div class="text-danger">{{ error }}</div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <!-- Price -->
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                {{ form.price.label_tag }}
+                                {{ form.price }}
+                                {% for error in form.price.errors %}
+                                    <div class="text-danger">{{ error }}</div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <!-- Total Price -->
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                {{ form.total_price.label_tag }}
+                                {{ form.total_price }}
+                                {% for error in form.total_price.errors %}
+                                    <div class="text-danger">{{ error }}</div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <!-- Payment Status -->
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                {{ form.pay_status.label_tag }}
+                                {{ form.pay_status }}
+                            </div>
+                        </div>
+
+                        <!-- Type -->
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                {{ form.type.label_tag }}
+                                {{ form.type }}
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Card Footer -->
+                    <div class="card-footer d-flex justify-content-end">
+                        <a href="{% url 'website:purchase-view' %}" class="btn btn-secondary me-2">
+                            <i class="bi bi-arrow-counterclockwise me-1"></i> {% trans "Back" %}
+                        </a>
+                        <button type="submit" class="btn btn-success">
+                            <i class="bi bi-save-fill me-1"></i> {% trans "Save Purchase" %}
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- JavaScript to auto-calculate total_price -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const amountInput = document.getElementById('{{ form.amount.id_for_label }}');
+        const priceInput = document.getElementById('{{ form.price.id_for_label }}');
+        const totalInput = document.getElementById('{{ form.total_price.id_for_label }}');
+
+        function calculateTotal() {
+            const amount = parseFloat(amountInput.value) || 0;
+            const price = parseFloat(priceInput.value) || 0;
+            totalInput.value = (amount * price).toFixed(2);
+        }
+
+        // Update total when either input changes
+        amountInput.addEventListener('input', calculateTotal);
+        priceInput.addEventListener('input', calculateTotal);
+    });
+</script>
+{% endblock %}
