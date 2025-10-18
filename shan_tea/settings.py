@@ -11,12 +11,21 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
-import os
+import os, environ
 # import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+# =========================Add for secure Key=====================================
+env = environ.Env()
+environ.Env.read_env(env_file=os.path.join(BASE_DIR, ".env"))
+
+# optional: expose to other modules
+ADMIN_USERNAME = env("DJANGO_ADMIN_USERNAME", default=None)
+ADMIN_EMAIL = env("DJANGO_ADMIN_EMAIL", default=None)
+ADMIN_PASSWORD = env("DJANGO_ADMIN_PASSWORD", default=None)
+# ==============================================================
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
