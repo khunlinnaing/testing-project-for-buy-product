@@ -37,7 +37,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*","testing-project-for-buy-product.onrender.com"]
 
-
+CSRF_TRUSTED_ORIGINS = [
+    'https://testing-project-for-buy-product.onrender.com',
+]
 # Application definition
 CORS_ALLOW_ALL_ORIGINS = True
 CSRF_COOKIE_SECURE = True
