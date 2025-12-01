@@ -40,6 +40,9 @@ ALLOWED_HOSTS = ["*","testing-project-for-buy-product.onrender.com"]
 
 # Application definition
 CORS_ALLOW_ALL_ORIGINS = True
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
