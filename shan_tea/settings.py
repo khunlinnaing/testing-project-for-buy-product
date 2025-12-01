@@ -22,9 +22,9 @@ env = environ.Env()
 environ.Env.read_env(env_file=os.path.join(BASE_DIR, ".env"))
 
 # optional: expose to other modules
-ADMIN_USERNAME = env("DJANGO_ADMIN_USERNAME", default=None)
-ADMIN_EMAIL = env("DJANGO_ADMIN_EMAIL", default=None)
-ADMIN_PASSWORD = env("DJANGO_ADMIN_PASSWORD", default=None)
+ADMIN_USERNAME ='admin'
+ADMIN_EMAIL = 'admin@example.com'
+ADMIN_PASSWORD = 'admin'
 # ==============================================================
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
