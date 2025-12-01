@@ -24,5 +24,6 @@ urlpatterns = [
     path('api/', include('project.urls')),
     path('', include('project.web_urls')),
 ]
+print(settings.DEBUG)
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

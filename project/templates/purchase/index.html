@@ -63,7 +63,7 @@
                         <td style="text-align: right;">{{data.total_price|floatformat:2|intcomma}} {% trans "MMK" %}</td>
                         <td>{{data.create_date|date:"d-m-Y"}}</td>
                         <td>{% if data.pay_status %}<span
-                                class="badge bg-success rounded-pill px-2 py-1">{% trans "Completed" %}</span>{% else %}<span
+                                class="badge bg-success rounded-pill px-2 py-1">{% trans "Paid" %}</span>{% else %}<span
                                 class="badge bg-danger rounded-pill px-2 py-1">{% trans "Pending" %}</span>{% endif %}</td>
                         <td>
                             <a href="{% url 'website:purchase-edit-view' data.id %}"
